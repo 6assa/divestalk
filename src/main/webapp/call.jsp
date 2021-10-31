@@ -7,7 +7,7 @@
 <title>DivesTalk 電話画面</title>
 </head>
 <body>
-	<h5>Title</h5>
+	<h5>≪Title</h5>
 	<h2>電話</h2>
 	<input type="tel" name="outputNum" placeholder="000000000">
 	<p>
