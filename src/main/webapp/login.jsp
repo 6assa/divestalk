@@ -4,8 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
+<h1>DivesTalk</h1>
+<p class="inpuit">email</p>
+<input type="email" name="email" placeholder="your email">
+<p class="inpuit">password</p>
+<input type="password" name="password" placeholder="your password">
 </body>
 </html>
