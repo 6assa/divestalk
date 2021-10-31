@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>DivesTalk メイン画面</title>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div class="nowUser">
@@ -17,23 +18,38 @@
 <div class="contents-body">
 <div class="link-button">
 <a href="#">機能1</a>
+</div>
+<div class="link-button">
 <a href="#">機能2</a>
+</div>
+<div class="link-button">
 <a href="#">機能3</a>
 </div>
+
 </div>
 <div class="contents-body">
 <div class="link-button">
 <a href="#">機能1</a>
+</div>
+<div class="link-button">
 <a href="#">機能2</a>
+</div>
+<div class="link-button">
 <a href="#">機能3</a>
 </div>
+
 </div>
 <div class="contents-body">
 <div class="link-button">
 <a href="#">機能1</a>
+</div>
+<div class="link-button">
 <a href="#">機能2</a>
+</div>
+<div class="link-button">
 <a href="#">機能3</a>
 </div>
+
 </div>
 </div>
 </body>
