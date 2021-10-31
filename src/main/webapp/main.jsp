@@ -9,48 +9,31 @@
 </head>
 <body>
 <div class="nowUser">
-<img src="" alt="userIcon"/>
+<img src="images/usericon.png" width="50px" height="50px" alt="userIcon"/>
 <p>Now User</p>
 </div>
 
 <div class="contents-area">
 <h2>メニュー</h2>
 <div class="contents-body">
-<div class="link-button">
-<a href="#">機能1</a>
-</div>
-<div class="link-button">
-<a href="#">機能2</a>
-</div>
-<div class="link-button">
-<a href="#">機能3</a>
+<button class="link-button" onclick="location.href='#'">機能1</button>
+<button class="link-button" onclick="location.href='#'">機能2</button>
+<button class="link-button" onclick="location.href='#'">機能3</button>
 </div>
 
-</div>
 <div class="contents-body">
-<div class="link-button">
-<a href="#">機能1</a>
-</div>
-<div class="link-button">
-<a href="#">機能2</a>
-</div>
-<div class="link-button">
-<a href="#">機能3</a>
+<button class="link-button" onclick="location.href='#'">機能4</button>
+<button class="link-button" onclick="location.href='#'">機能5</button>
+<button class="link-button" onclick="location.href='#'">機能6</button>
 </div>
 
-</div>
 <div class="contents-body">
-<div class="link-button">
-<a href="#">機能1</a>
-</div>
-<div class="link-button">
-<a href="#">機能2</a>
-</div>
-<div class="link-button">
-<a href="#">機能3</a>
+<button class="link-button" onclick="location.href='#'">機能7</button>
+<button class="link-button" onclick="location.href='#'">機能8</button>
+<button class="link-button" onclick="location.href='#'">機能9</button>
 </div>
 
-</div>
+
 </div>
 </body>
 </html>
