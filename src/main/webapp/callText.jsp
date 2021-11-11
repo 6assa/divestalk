@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>DivesTalk 文字入力画面</title>
 </head>
 <body>
 

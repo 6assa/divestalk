@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>DivesTalk 文章登録画面</title>
 </head>
 <body>
 
