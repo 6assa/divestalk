@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>DivesTalk 新規登録画面</title>
+<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 	<div class="container">
@@ -21,7 +22,7 @@
 			</form>
 		</div>
 
-		<a href="SignUpServlet">>> ログイン画面へ</a>
+		<a href="login.jsp">>> ログイン画面へ</a>
 	</div>
 </body>
 </html>
