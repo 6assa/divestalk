@@ -39,6 +39,6 @@
 	<div>
 		<input type="submit" name="inputNum" value="☎">
 	</div>
-
+<a href="main.jsp">>> メニュー画面へ</a>
 </body>
 </html>
