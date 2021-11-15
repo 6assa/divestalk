@@ -9,7 +9,7 @@
 <body>
 	<h5>≪Title</h5>
 	<h2>電話</h2>
-	<input type="tel" name="outputNum" placeholder="000000000">
+	<input type="tel" name="outputNum" placeholder="11">
 	<p>
 		<label for="model">モードを選択してください：</label> <select id="model"
 			name="model">
