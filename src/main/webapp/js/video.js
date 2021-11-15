@@ -3,8 +3,8 @@ window.__SKYWAY_KEY__ = 'cd92c324-9dca-499e-b520-f8af9c61d497';
 const localStream = await navigator.mediaDevices
 .getUserMedia({
   audio: true,
--   video: true,
-+   video: { facingMode: 'user' }, // 液晶側のカメラ
+   video: true,
+   video: { facingMode: 'user' }, // 液晶側のカメラ
 })
 const toggleCamera = document.getElementById('js-toggle-camera');
 const toggleMicrophone = document.getElementById('js-toggle-microphone');
@@ -16,7 +16,6 @@ toggleCamera.addEventListener('click', () => {
   videoTracks.enabled = !videoTracks.enabled;
   cameraStatus.textContent = `カメラ${videoTracks.enabled ? 'ON' : 'OFF'}`;
 });
-kkk
 toggleMicrophone.addEventListener('click', () => {
   const audioTracks = localStream.getAudioTracks()[0];
   audioTracks.enabled = !audioTracks.enabled;
