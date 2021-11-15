@@ -26,5 +26,11 @@
      </div>
    </div>
  </div>
+ <script>
+  // 発言を作成
+  const uttr = new SpeechSynthesisUtterance("Hello World!")
+  // 発言を再生 (発言キューに発言を追加)
+  speechSynthesis.speak(uttr)
+</script>
 </body>
 </html>
