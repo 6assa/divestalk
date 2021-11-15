@@ -22,7 +22,7 @@
 <div class="contents-body">
 <button class="link-button" onclick="location.href='talk.jsp'">トーク</button>
 <button class="link-button" onclick="location.href='call.jsp'">電話</button>
-<button class="link-button" onclick="location.href='#'">筆談代行</button>
+<button class="link-button" onclick="location.href='stack.jsp'">筆談代行</button>
 </div>
 
 <div class="contents-body">
