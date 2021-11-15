@@ -1,6 +1,40 @@
 @charset "UTF-8";
 
+body {
+	display: block;
+	margin: 20px;
+}
+
+h1 {
+	display: block;
+	font-size: 2em;
+	margin-block-start: 0.67em;
+	margin-block-end: 0.67em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+	text-align: center;
+}
+
+h2 {
+	display: block;
+	font-size: 2em;
+	margin-block-start: 0.67em;
+	margin-block-end: 0.67em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+	text-align: center;
+}
+
 .card {
 	padding: 10px;
+	margin: 40px;
 	background-color: blue;
+	min-width: 80%;
+}
+
+.input {
+	text-align: center;
+	width: 100%;
 }
