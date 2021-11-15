@@ -14,10 +14,11 @@
 		<div class="card">
 			<p class="error" id="errorMsg">${errorMsg}</p>
 			<form action="LoginServlet" id="loginForm" method="post">
+			   <input type="text" name="name" id="name" placeholder="名前"><br>
 				<input type="email" name="mailAddress" id="mailAddress"
-					placeholder="xxxxxx@xxx.xxx"><br> <input
-					type="password" name="password" id="password" placeholder="パスワード"><br>
-				<input type="text" name="name" id="name" placeholder="名前"><br>
+					placeholder="xxxxxx@xxx.xxx"><br> 
+					<input	type="password" name="password" id="password" placeholder="パスワード(8文字以上)"><br>
+					<input	type="password" name="password" id="password" placeholder="パスワード再入力"><br>
 				<input type="submit" value="登録する">
 			</form>
 		</div>
