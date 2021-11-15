@@ -20,14 +20,14 @@
 </div>
 
 <div class="contents-body">
-<button class="link-button" onclick="location.href='#'">トーク</button>
-<button class="link-button" onclick="location.href='#'">電話</button>
+<button class="link-button" onclick="location.href='talk.jsp'">トーク</button>
+<button class="link-button" onclick="location.href='call.jsp'">電話</button>
 <button class="link-button" onclick="location.href='#'">筆談代行</button>
 </div>
 
 <div class="contents-body">
-<button class="link-button" onclick="location.href='#'">アラーム</button>
-<button class="link-button" onclick="location.href='#'">タイマー</button>
+<button class="link-button" onclick="location.href='alerm.jsp'">アラーム</button>
+<button class="link-button" onclick="location.href='timer.jsp'">タイマー</button>
 <button class="link-button" onclick="location.href='#'">ユーザ設定</button>
 </div>
 
