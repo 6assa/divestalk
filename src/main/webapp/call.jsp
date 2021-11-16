@@ -7,11 +7,16 @@
 <title>DivesTalk 電話画面</title>
 </head>
 <script type="text/javascript"><!--
+const number = document.getElementById("phonenumber");
+const hassin = n=number.value;
 function addTF(str)
 {
 	document.phonenumber.outputNum.value += str;
 }
 function gopage(){
+	let link=document.getElementById('denwabangou');
+	let bangou='tel:''+hassin;
+	link.setAttribute('href',bangou);
 	  for(var i=0; i<document.getElementById('model').length; i++){
 	    if(document.getElementById('model').options[i].selected == true){
 	      url = document.getElementById('model').options[i].value;
@@ -23,7 +28,7 @@ function gopage(){
 <body>
 	<h2>電話</h2>
 	<form name="phonenumber">
-	<input type="tel" name="outputNum" placeholder="20" disabled>
+	<input id="phonenumber" type="tel" name="outputNum" placeholder="20" disabled>
 	<p>
 		<label for="model">モードを選択してください：</label> 
 		<select id="model" name="model">
@@ -51,7 +56,9 @@ function gopage(){
 			name="inputNum" value="#" onClick="addTF(this.value)">
 	</div>
 	<div>
+	<a id="denwabangou" href="TEL:">
 		<input type="button" name="inputNum" value="☎" onclick="gopage()">
+	</a>
 	</div>
 	</form>
 <h5><a href="main.jsp">>> メニュー画面へ</a></h5>
