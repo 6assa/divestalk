@@ -11,16 +11,24 @@ function addTF(str)
 {
 	document.phonenumber.outputNum.value += str;
 }
+function gopage(){
+	  for(var i=0; i<document.getElementById('model').length; i++){
+	    if(document.getElementById('model').options[i].selected == true){
+	      url = document.getElementById('model').options[i].value;
+	      location.href = url;
+	    }
+	  }
+	}
 // --></script>
 <body>
 	<h2>電話</h2>
 	<form name="phonenumber">
 	<input type="tel" name="outputNum" placeholder="20" disabled>
 	<p>
-		<label for="model">モードを選択してください：</label> <select id="model"
-			name="model">
-			<option value="textsound">文字音声</option>
-			<option value="video">ビデオ</option>
+		<label for="model">モードを選択してください：</label> 
+		<select id="model" name="model">
+			<option selected value="callText.jsp" >文字音声</option>
+			<option value="callVideo.jsp" >ビデオ</option>
 		</select>
 	<div class="num-body">
 		<input type="button" name="inputNum" value="1" onClick="addTF(this.value)"> <input
@@ -43,7 +51,7 @@ function addTF(str)
 			name="inputNum" value="#" onClick="addTF(this.value)">
 	</div>
 	<div>
-		<input type="submit" name="inputNum" value="☎" onclick="location.href='calltext.jsp'">
+		<input type="button" name="inputNum" value="☎" onclick="gopage()">
 	</div>
 	</form>
 <h5><a href="main.jsp">>> メニュー画面へ</a></h5>
