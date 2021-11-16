@@ -14,7 +14,7 @@
 <div class="contents-area">
 <h2>メニュー</h2>
 <div class="contents-body">
-<button class="link-button" onclick="location.href='#'">機能1</button>
+<button class="link-button" onclick="location.href='#'">連絡先</button>
 <button class="link-button" onclick="location.href='#'">機能2</button>
 <button class="link-button" onclick="location.href='#'">アプリを閉じる</button>
 </div>
