@@ -11,10 +11,49 @@
      margin: 30px auto;
    }
  </style>
- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
 </head>
 <body>
+<button id="kakunin">音声文字化確認</button>
+<div id="content"></div>
+<script>
+    const speech = new webkitSpeechRecognition();
+    speech.lang = 'ja-JP';
+
+    const btn = document.getElementById('btn');
+    const content = document.getElementById('content');
+
+    btn.addEventListener('click' , function() {
+    // 音声認識をスタート
+    speech.start();
+    });
+
+    //---------------追記---------------//
+    //音声自動文字起こし機能
+    speech.onresult = function(e) {
+         speech.stop();
+         if(e.results[0].isFinal){
+             var autotext =  e.results[0][0].transcript
+             console.log(e);
+             console.log(autotext);
+             content.innerHTML += '<div align="left">'+ autotext +'</div>';
+          }
+     }
+
+     speech.onend = () => { 
+        speech.start() 
+     };
+    //--------------------------------//
+  const text     = document.querySelector('#text')
+  const speakBtn = document.querySelector('#send')
+
+  speakBtn.addEventListener('click', function() {
+    // 発言を作成
+    const uttr = new SpeechSynthesisUtterance(text.value)
+    // 発言を再生 (発言キューに発言を追加)
+    speechSynthesis.speak(uttr)
+    content.innerHTML += '<div align="right">'+ uttr +'</div>';
+  })
+</script>
 <div class="container">
    <div class="chat-area"></div>
    <div class="message-area">
@@ -26,16 +65,5 @@
      </div>
    </div>
  </div>
-<script>
-  const text     = document.querySelector('#text')
-  const speakBtn = document.querySelector('#send')
-
-  speakBtn.addEventListener('click', function() {
-    // 発言を作成
-    const uttr = new SpeechSynthesisUtterance(text.value)
-    // 発言を再生 (発言キューに発言を追加)
-    speechSynthesis.speak(uttr)
-  })
-</script>
 </body>
 </html>
