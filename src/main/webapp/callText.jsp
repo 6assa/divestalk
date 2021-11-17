@@ -35,7 +35,7 @@
              var autotext =  e.results[0][0].transcript
              console.log(e);
              console.log(autotext);
-             content.innerHTML += '<div align="left">'+ autotext +'</div>';
+             chat-area.innerHTML += '<div align="left">'+ autotext +'</div>';
           }
      }
 
@@ -51,7 +51,7 @@
     const uttr = new SpeechSynthesisUtterance(text.value)
     // 発言を再生 (発言キューに発言を追加)
     speechSynthesis.speak(uttr)
-    content.innerHTML += '<div align="right">'+ uttr +'</div>';
+    chat-area.innerHTML += '<div align="right">'+ uttr +'</div>';
   })
 </script>
 <div class="container">
