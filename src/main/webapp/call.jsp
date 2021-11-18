@@ -6,25 +6,6 @@
 <meta charset="UTF-8">
 <title>DivesTalk  電話画面</title>
 </head>
-<script type="text/javascript"><!--
-const number = document.getElementById("phonenumber");
-const hassin = n=number.value;
-function addTF(str)
-{
-	document.phonenumber.outputNum.value += str;
-}
-function gopage(){
-	let link=document.getElementById('denwabangou');
-	let bangou='tel:''+hassin;
-	link.setAttribute('href',bangou);
-	  for(var i=0; i<document.getElementById('model').length; i++){
-	    if(document.getElementById('model').options[i].selected == true){
-	      url = document.getElementById('model').options[i].value;
-	      location.href = url;
-	    }
-	  }
-	}
-// --></script>
 <body>
 	<h2>電話</h2>
 	<form name="phonenumber">
@@ -62,5 +43,24 @@ function gopage(){
 	</div>
 	</form>
 <h5><a href="main.jsp">>> メニュー画面へ</a></h5>
+<script>
+var number = document.getElementById("phonenumber");
+const hassin = number.value;
+function addTF(str)
+{
+	document.phonenumber.outputNum.value += str; //番号入力後追加
+}
+function gopage(){
+	let link=document.getElementById('denwabangou');
+	var bangou='tel:'+ hassin;
+	link.setAttribute('href',bangou);
+	  for(var i=0; i<document.getElementById('model').length; i++){
+	    if(document.getElementById('model').options[i].selected == true){
+	      url = document.getElementById('model').options[i].value;
+	      location.href = url;
+	    }
+	  }
+	}
+</script>
 </body>
 </html>
