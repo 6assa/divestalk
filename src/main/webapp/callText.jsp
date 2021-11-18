@@ -14,10 +14,10 @@
    <div class="chat-area"></div>
    <div class="message-area">
      <div class="message-area-text">
-       <textarea id="text"></textarea>
+       <input type="text" id="text" cols="40" wrap="hard">
      </div>
      <div class="message-area-button">
-       <input type="submit" onclick="onbuttonclick()" value="送信">
+       <input type="submit" class="disabled-button" onclick="onbuttonclick()" value="送信">
      </div>
    </div>
  </div>
