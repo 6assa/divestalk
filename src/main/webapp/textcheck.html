@@ -37,14 +37,14 @@
     //音声自動文字起こし機能
     speech.onresult = function(e) {
          speech.stop();
-         if(e.results[0].isFinal){
+         sousin.innerHTML='録画完了';
+        	 window.onload = function() {
              var autotext =  e.results[0][0].transcript;
+             alert(autotext.value);
              console.log(e);
              console.log(autotext);
-             window.onload = function () {
-             sousin.innerHTML += autotext +'<br>';
+             sousin.innerHTML +=  '<div align="left">'+ autotext.value +'</div>';
              };
-          }
      }
 
      speech.onend = () => { 

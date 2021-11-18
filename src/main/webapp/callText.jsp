@@ -11,7 +11,7 @@
 <button id="kakunin">音声文字化確認</button>
 <div id="content"></div>
 <div class="container">
-   <div class="chat-area"></div>
+   <div id="chat-area" class="chat-area"></div>
    <div class="message-area">
      <div class="message-area-text">
        <input type="text" id="text" cols="40" wrap="hard">
@@ -27,7 +27,7 @@
 
     const btn = document.getElementById('kakunin');
     const content = document.getElementById('content');
-
+    const sousin=document.getElementById('chat-area');
     btn.addEventListener('click' , function() {
     // 音声認識をスタート
     speech.start();
@@ -38,10 +38,13 @@
     speech.onresult = function(e) {
          speech.stop();
          if(e.results[0].isFinal){
+
              var autotext =  e.results[0][0].transcript;
              console.log(e);
              console.log(autotext);
-             chat-area.innerHTML += '<div align="left">'+ autotext +'</div>';
+             window.onload = function () {
+            	 sousin.innerHTML +=  '<div align="left">'+ autotext.value +'</div>';
+             };
           }
      }
 
@@ -49,9 +52,11 @@
         speech.start();
      };
     //--------------------------------//
+  
+  //const speakBtn = document.getElementById('send');
   function onbuttonclick() {
     // 発言を作
-  //const speakBtn = document.getElementById('send');
+
 	   var text     = document.getElementById('text');
     sousin.innerHTML +=  '<div align="right">'+ text.value +'</div>';
     const uttr = new SpeechSynthesisUtterance(text.value);
