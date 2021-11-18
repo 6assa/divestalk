@@ -5,12 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>DivesTalk 文字入力画面</title>
-<style>
-   .container {
-     width: 60%;
-     margin: 30px auto;
-   }
- </style>
+<link rel="stylesheet" href="./../css/callText.css">
 </head>
 <body>
 <button id="kakunin">音声文字化確認</button>
