@@ -27,7 +27,7 @@
     speech.onresult = function(e) {
          speech.stop();
          if(e.results[0].isFinal){
-             var autotext =  e.results[0][0].transcript
+             var autotext =  e.results[0][0].transcript;
              console.log(e);
              console.log(autotext);
              chat-area.innerHTML += '<div align="left">'+ autotext +'</div>';
@@ -38,14 +38,14 @@
         speech.start() 
      };
     //--------------------------------//
-  const text     = document.querySelector('#text')
-  const speakBtn = document.querySelector('#send')
+  const text     = document.querySelector('#text');
+  const speakBtn = document.querySelector('#send');
 
   speakBtn.addEventListener('click', function() {
     // 発言を作成
-    const uttr = new SpeechSynthesisUtterance(text.value)
+    const uttr = new SpeechSynthesisUtterance(text.value);
     // 発言を再生 (発言キューに発言を追加)
-    speechSynthesis.speak(uttr)
+    speechSynthesis.speak(uttr);
     chat-area.innerHTML += '<div align="right">'+ uttr +'</div>';
   })
 </script>
