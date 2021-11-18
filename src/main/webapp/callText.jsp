@@ -35,7 +35,7 @@
      }
 
      speech.onend = () => { 
-        speech.start() 
+        speech.start();
      };
     //--------------------------------//
   const text     = document.querySelector('#text');
