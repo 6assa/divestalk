@@ -38,14 +38,14 @@
     speech.onresult = function(e) {
          speech.stop();
          if(e.results[0].isFinal){
-
              var autotext =  e.results[0][0].transcript;
              console.log(e);
              console.log(autotext);
-             window.onload = function () {
-            	 sousin.innerHTML +=  '<div align="left">'+ autotext.value +'</div>';
-             };
-          }
+             sousin.innerHTML +=  '<div align="left">'+ autotext +'</div>';
+             const uttr = new SpeechSynthesisUtterance(autotext);
+             // 発言を再生 (発言キューに発言を追加)
+             speechSynthesis.speak(uttr);
+         }
      }
 
      speech.onend = () => { 
