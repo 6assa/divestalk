@@ -11,13 +11,13 @@
 <button id="kakunin">音声文字化確認</button>
 <div id="content"></div>
 <div class="container">
-   <div class="chat-area">あいうえお</div>
+   <div id="chat-area" class="chat-area"></div>
    <div class="message-area">
      <div class="message-area-text">
-       <textarea id="text"></textarea>
+       <input type="text" id="text">
      </div>
      <div class="message-area-button">
-       <button id="send">送信</button>
+       <input type="submit" onclick="onbuttonclick()" value="送信">
      </div>
    </div>
  </div>
@@ -41,7 +41,9 @@
              var autotext =  e.results[0][0].transcript;
              console.log(e);
              console.log(autotext);
+             window.onload = function () {
              sousin.innerHTML += autotext +'<br>';
+             };
           }
      }
 
@@ -49,15 +51,17 @@
         speech.start();
      };
     //--------------------------------//
-  const text     = document.getElementById('text');
-  const speakBtn = document.getElementById('send');
-  speakBtn.addEventListener('click', function() {
+  
+  //const speakBtn = document.getElementById('send');
+  function onbuttonclick() {
     // 発言を作
+
+	   var text     = document.getElementById('text');
+    sousin.innerHTML +=  '<div align="right">'+ text.value +'</div>';
     const uttr = new SpeechSynthesisUtterance(text.value);
     // 発言を再生 (発言キューに発言を追加)
     speechSynthesis.speak(uttr);
-    sousin.innerHTML += text+'<br>';
-  });
+  };
 </script>
 </body>
 </html>
