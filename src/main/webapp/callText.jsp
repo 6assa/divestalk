@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>DivesTalk 文字入力画面</title>
-<link rel="stylesheet" href="./../css/callText.css">
+<link rel="stylesheet" href="css/callText.css">
 </head>
 <body>
 <button id="kakunin">音声文字化確認</button>
@@ -40,13 +40,13 @@
     //--------------------------------//
   const text     = document.querySelector('#text');
   const speakBtn = document.querySelector('#send');
-
+  const element=document.querySelector('#chat-area');
   speakBtn.addEventListener('click', function() {
     // 発言を作成
     const uttr = new SpeechSynthesisUtterance(text.value);
     // 発言を再生 (発言キューに発言を追加)
     speechSynthesis.speak(uttr);
-    chat-area.innerHTML += '<div align="right">'+ uttr +'</div>';
+    element.innerHTML += '<div align="right">'+ uttr +'</div>';
   })
 </script>
 <div class="container">
