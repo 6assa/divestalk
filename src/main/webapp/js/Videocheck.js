@@ -58,7 +58,7 @@ const Peer = window.Peer;
     closeTrigger.addEventListener('click', () => mediaConnection.close(true));
   });
 
-  peer.once('open', id => (localId.textContent = id));
+  peer.on('open', id => (localId.innerHTML = id));
 
   // Register callee handler
   peer.on('call', mediaConnection => {
