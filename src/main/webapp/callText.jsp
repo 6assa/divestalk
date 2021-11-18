@@ -40,14 +40,12 @@
     //--------------------------------//
   const text     = document.querySelector('#text');
   const speakBtn = document.querySelector('#send');
-  const element=document.querySelector('#chat-area');
-  console.log(element.innerHTML);
   speakBtn.addEventListener('click', function() {
     // 発言を作成
     const uttr = new SpeechSynthesisUtterance(text.value);
     // 発言を再生 (発言キューに発言を追加)
     speechSynthesis.speak(uttr);
-    element.innerHTML += '<div align="right">'+ uttr +'</div>';
+    chat-area.innerHTML += '<div align="right">'+ text.value +'</div>';
   })
 </script>
 <div class="container">
