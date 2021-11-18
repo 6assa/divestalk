@@ -53,6 +53,7 @@ function addTF(str)
 function gopage(){
 	let link=document.getElementById('denwabangou');
 	var bangou='tel:'+ hassin;
+	alert(document.getElementById("phonenumber"););
 	link.setAttribute('href',bangou);
 	  for(var i=0; i<document.getElementById('model').length; i++){
 	    if(document.getElementById('model').options[i].selected == true){
