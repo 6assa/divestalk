@@ -45,7 +45,7 @@
     const uttr = new SpeechSynthesisUtterance(text.value);
     // 発言を再生 (発言キューに発言を追加)
     speechSynthesis.speak(uttr);
-    chat-area.innerHTML += '<div align="right">'+ text.value +'</div>';
+    chat-area.innerHTML = '<div align="right">'+ text.value +'</div>';
   })
 </script>
 <div class="container">
