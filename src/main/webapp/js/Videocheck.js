@@ -28,7 +28,7 @@ const Peer = window.Peer;
   localVideo.playsInline = true;
   await localVideo.play().catch(console.error);
 
-  const peer = (window.peer = new Peer({
+  var peer = (window.peer = new Peer({
     key: '791965d2-d252-4755-ae36-d34e02cf3518',
     debug: 3,
   }));
