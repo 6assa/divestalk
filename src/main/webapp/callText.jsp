@@ -30,7 +30,7 @@
              var autotext =  e.results[0][0].transcript;
              console.log(e);
              console.log(autotext);
-             chat-area.innerHTML += '<div align="left">'+ autotext +'</div>';
+             chat-area.innerHTML = '<div align="left">'+ autotext +'</div>';
           }
      }
 
