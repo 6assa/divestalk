@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DivesTalk 電話画面</title>
+<title>DivesTalk  電話画面</title>
 </head>
 <script type="text/javascript"><!--
 const number = document.getElementById("phonenumber");
