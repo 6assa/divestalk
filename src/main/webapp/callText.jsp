@@ -41,6 +41,7 @@
   const text     = document.querySelector('#text');
   const speakBtn = document.querySelector('#send');
   const element=document.querySelector('#chat-area');
+  console.log(element.innerHTML);
   speakBtn.addEventListener('click', function() {
     // 発言を作成
     const uttr = new SpeechSynthesisUtterance(text.value);
@@ -50,7 +51,7 @@
   })
 </script>
 <div class="container">
-   <div class="chat-area"></div>
+   <div class="chat-area">あいうえお</div>
    <div class="message-area">
      <div class="message-area-text">
        <textarea id="text"></textarea>
