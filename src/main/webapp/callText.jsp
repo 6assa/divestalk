@@ -10,11 +10,22 @@
 <body>
 <button id="kakunin">音声文字化確認</button>
 <div id="content"></div>
+<div class="container">
+   <div class="chat-area">あいうえお</div>
+   <div class="message-area">
+     <div class="message-area-text">
+       <textarea id="text"></textarea>
+     </div>
+     <div class="message-area-button">
+       <button id="send" class="disabled-button">送信</button>
+     </div>
+   </div>
+ </div>
 <script>
     const speech = new webkitSpeechRecognition();
     speech.lang = 'ja-JP';
 
-    const btn = document.getElementById('btn');
+    const btn = document.getElementById('kakunin');
     const content = document.getElementById('content');
 
     btn.addEventListener('click' , function() {
@@ -30,7 +41,7 @@
              var autotext =  e.results[0][0].transcript;
              console.log(e);
              console.log(autotext);
-             chat-area.innerHTML = '<div align="left">'+ autotext +'</div>';
+             chat-area.innerHTML += '<div align="left">'+ autotext +'</div>';
           }
      }
 
@@ -45,19 +56,8 @@
     const uttr = new SpeechSynthesisUtterance(text.value);
     // 発言を再生 (発言キューに発言を追加)
     speechSynthesis.speak(uttr);
-    chat-area.innerHTML = '<div align="right">'+ text.value +'</div>';
+    chat-area.innerHTML += '<div align="right">'+ text.value +'</div>';
   })
 </script>
-<div class="container">
-   <div class="chat-area">あいうえお</div>
-   <div class="message-area">
-     <div class="message-area-text">
-       <textarea id="text"></textarea>
-     </div>
-     <div class="message-area-button">
-       <button id="send" class="disabled-button">送信</button>
-     </div>
-   </div>
- </div>
 </body>
 </html>
