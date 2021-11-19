@@ -50,7 +50,7 @@ function addTF(str){
 function smtel(telno){
 	if((navigator.userAgent.indexOf('iPhone') > 0 ) || navigator.userAgent.indexOf('Android') > 0 ){
 	document.write('<a id="kakeru" href="tel:'+telno+'">'+telno+'</a>');
-	document.getElementById('aタグのID').click();
+	document.getElementById('kakeru').click();
 		  window.location.href = 'callText.jsp';
 
 
