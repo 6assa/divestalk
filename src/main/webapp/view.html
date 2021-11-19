@@ -44,13 +44,19 @@
 <script>
 var number = document.getElementById("phonenumber");
 const hassin = number.value;
-function addTF(str)
-{
+function addTF(str){
 	document.phonenumber.outputNum.value += str; //番号入力後追加
 }
 function smtel(telno){
 	if((navigator.userAgent.indexOf('iPhone') > 0 ) || navigator.userAgent.indexOf('Android') > 0 ){
 	document.write('<a href="tel:'+telno+'">'+telno+'</a>');
+	setTimeout(function(){
+
+		  window.location.href = 'callText.jsp';
+
+		}, 5*1000);
+
+
 	}else{
 	document.write("PC上からは発信できません");
 	}
