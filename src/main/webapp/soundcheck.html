@@ -1,43 +1,69 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>音声認識サンプル</title>
+<meta charset="UTF-8">
+<title>DivesTalk  電話画面</title>
 </head>
 <body>
-    <h2>音声認識サンプル</h2>
-    <button id="btn">start</button>
-    <div id="content"></div>
-
+	<h2>電話</h2>
+	<form name="phonenumber">
+	<input id="phonenumber" type="tel" name="outputNum" placeholder="20" disabled>
+	<p>
+		<label for="model">モードを選択してください：</label> 
+		<select id="model" name="model">
+			<option selected value="callText.jsp" >文字音声</option>
+			<option value="callVideo.jsp" >ビデオ</option>
+		</select>
+	<div class="num-body">
+		<input type="button" name="inputNum" value="1" onClick="addTF(this.value)"> <input
+			type="button" name="inputNum" value="2" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" value="3" onClick="addTF(this.value)">
+	</div>
+	<div class="num-body">
+		<input type="button" name="inputNum" value="4" onClick="addTF(this.value)"> <input
+			type="button" name="inputNum" value="5" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" value="6" onClick="addTF(this.value)">
+	</div>
+	<div class="num-body">
+		<input type="button" name="inputNum" value="7" onClick="addTF(this.value)"> <input
+			type="button" name="inputNum" value="8" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" value="9" onClick="addTF(this.value)">
+	</div>
+	<div class="num-body">
+		<input type="button" name="inputNum" value="*" onClick="addTF(this.value)"> <input
+			type="button" name="inputNum" value="0" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" value="#" onClick="addTF(this.value)">
+	</div>
+	<div>
+	<a id="denwabangou" href="TEL:">
+		<input type="button" name="inputNum" value="☎" onclick="gopage()">
+	</a>
+	</div>
+	</form>
+<h5><a href="main.jsp">>> メニュー画面へ</a></h5>
 <script>
-const speech = new webkitSpeechRecognition();
-speech.lang = 'ja-JP';
-
-const btn = document.getElementById('btn');
-const content = document.getElementById('content');
-
-btn.addEventListener('click' , function() {
-// 音声認識をスタート
-speech.start();
-});
-
-//---------------追記---------------//
-//音声自動文字起こし機能
-speech.onresult = function(e) {
-     speech.stop();
-     if(e.results[0].isFinal){
-         var autotext =  e.results[0][0].transcript
-         console.log(e);
-         console.log(autotext);
-         content.innerHTML += '<div>'+ autotext +'</div>';
-      }
- }
-
- speech.onend = () => { 
-    speech.start() 
- };
-//--------------------------------//
-
+var number = document.getElementById("phonenumber");
+const hassin = number.value;
+function addTF(str)
+{
+	document.phonenumber.outputNum.value += str; //番号入力後追加
+}
+function gopage(){
+	let link=document.getElementById('denwabangou');
+	window.onload=function(){
+		var bangou='tel:'+ hassin;
+		alert(document.getElementById("phonenumber"););	
+	}
+	link.setAttribute('href',bangou);
+	  for(var i=0; i<document.getElementById('model').length; i++){
+	    if(document.getElementById('model').options[i].selected == true){
+	      url = document.getElementById('model').options[i].value;
+	      location.href = url;
+	    }
+	  }
+	}
 </script>
-<body>
-<html>
+</body>
+</html>

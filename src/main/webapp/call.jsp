@@ -37,32 +37,29 @@
 			name="inputNum" value="#" onClick="addTF(this.value)">
 	</div>
 	<div>
-	<a id="denwabangou" href="TEL:">
-		<input type="button" name="inputNum" value="☎" onclick="gopage()">
-	</a>
+		<input type="button" name="inputNum" value="☎" onclick='smtel(document.getElementById("phonenumber").value)'>
 	</div>
 	</form>
 <h5><a href="main.jsp">>> メニュー画面へ</a></h5>
 <script>
 var number = document.getElementById("phonenumber");
 const hassin = number.value;
-function addTF(str)
-{
+function addTF(str){
 	document.phonenumber.outputNum.value += str; //番号入力後追加
 }
-function gopage(){
-	let link=document.getElementById('denwabangou');
-	window.onload=function(){
-		var bangou='tel:'+ hassin;
-		alert(document.getElementById("phonenumber"););	
+function smtel(telno){
+	if((navigator.userAgent.indexOf('iPhone') > 0 ) || navigator.userAgent.indexOf('Android') > 0 ){
+	document.write('<a href="tel:'+telno+'">'+telno+'</a>');
+	setTimeout(function(){
+
+		  window.location.href = 'callText.jsp';
+
+		}, 5*1000);
+
+
+	}else{
+	document.write("PC上からは発信できません");
 	}
-	link.setAttribute('href',bangou);
-	  for(var i=0; i<document.getElementById('model').length; i++){
-	    if(document.getElementById('model').options[i].selected == true){
-	      url = document.getElementById('model').options[i].value;
-	      location.href = url;
-	    }
-	  }
 	}
 </script>
 </body>
