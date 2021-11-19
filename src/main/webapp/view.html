@@ -4,30 +4,57 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DivesTalk ログイン画面</title>
-<link rel="stylesheet" href="css/login.css">
+<title>DivesTalk  電話画面</title>
 </head>
 <body>
-	<div class="container">
-		<h1>DivesTalk</h1>
-		<h2>ログイン</h2>
-		<div class="card">
-			<p class="error" id="errorMsg">${errorMsg}</p>
-			<form action="LoginServlet" id="loginForm" method="post">
-				<input type="email" class="input" name="mailAddress"
-					id="mailAddress" placeholder="xxxxxx@xxx.xxx"><br> <input
-					type="password" class="input" name="password" id="password"
-					placeholder="パスワード"><br> <input type="submit"
-					class="input" value="ログイン" onclick="login();"> <label><br>
-				<input type="checkbox" id="save"><span>ログイン状態を保持する</span></label>
-			</form>
-		</div>
-
-		<a href="signup.jsp">>> 新規登録画面へ</a>
+	<h2>電話</h2>
+	<form name="phonenumber">
+	<input id="phonenumber" type="tel" name="outputNum" placeholder="20" disabled>
+	<p>
+		<label for="model">モードを選択してください：</label> 
+		<select id="model" name="model">
+			<option selected value="callText.jsp" >文字音声</option>
+			<option value="callVideo.jsp" >ビデオ</option>
+		</select>
+	<div class="num-body">
+		<input type="button" name="inputNum" value="1" onClick="addTF(this.value)"> <input
+			type="button" name="inputNum" value="2" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" value="3" onClick="addTF(this.value)">
 	</div>
-	<!-- container -->
-	<script src="js/jquery-3.2.0.min.js"></script>
-	<script src="js/login.js"></script>
-
+	<div class="num-body">
+		<input type="button" name="inputNum" value="4" onClick="addTF(this.value)"> <input
+			type="button" name="inputNum" value="5" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" value="6" onClick="addTF(this.value)">
+	</div>
+	<div class="num-body">
+		<input type="button" name="inputNum" value="7" onClick="addTF(this.value)"> <input
+			type="button" name="inputNum" value="8" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" value="9" onClick="addTF(this.value)">
+	</div>
+	<div class="num-body">
+		<input type="button" name="inputNum" value="*" onClick="addTF(this.value)"> <input
+			type="button" name="inputNum" value="0" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" value="#" onClick="addTF(this.value)">
+	</div>
+	<div>
+		<input type="button" name="inputNum" value="☎" onclick='smtel(document.getElementById("phonenumber"))''>
+	</div>
+	</form>
+<h5><a href="main.jsp">>> メニュー画面へ</a></h5>
+<script>
+var number = document.getElementById("phonenumber");
+const hassin = number.value;
+function addTF(str)
+{
+	document.phonenumber.outputNum.value += str; //番号入力後追加
+}
+function smtel(telno){
+	if((navigator.userAgent.indexOf(‘iPhone’) > 0 ) || navigator.userAgent.indexOf(‘Android’) > 0 ){
+	document.write(‘<a href=”tel:’+telno+'”>’+telno+'</a>’);
+	}else{
+	document.write(telno);
+	}
+	}
+</script>
 </body>
 </html>
