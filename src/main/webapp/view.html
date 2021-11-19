@@ -37,7 +37,7 @@
 			name="inputNum" value="#" onClick="addTF(this.value)">
 	</div>
 	<div>
-		<input type="button" name="inputNum" value="☎" onclick='smtel(document.getElementById("phonenumber"))''>
+		<input type="button" name="inputNum" value="☎" onclick='smtel(document.getElementById("phonenumber"))'>
 	</div>
 	</form>
 <h5><a href="main.jsp">>> メニュー画面へ</a></h5>
@@ -49,8 +49,8 @@ function addTF(str)
 	document.phonenumber.outputNum.value += str; //番号入力後追加
 }
 function smtel(telno){
-	if((navigator.userAgent.indexOf(‘iPhone’) > 0 ) || navigator.userAgent.indexOf(‘Android’) > 0 ){
-	document.write(‘<a href=”tel:’+telno+'”>’+telno+'</a>’);
+	if((navigator.userAgent.indexOf('iPhone') > 0 ) || navigator.userAgent.indexOf('Android') > 0 ){
+	document.write('<a href="tel:'+telno+'"">'+telno+'</a>');
 	}else{
 	document.write(telno);
 	}
