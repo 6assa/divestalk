@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>DivesTalk  電話画面</title>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 	<h2>電話</h2>
@@ -17,27 +18,27 @@
 			<option value="callVideo.jsp" >ビデオ</option>
 		</select>
 	<div class="num-body">
-		<input type="button" name="inputNum" value="1" onClick="addTF(this.value)"> <input
-			type="button" name="inputNum" value="2" onClick="addTF(this.value)"> <input type="button"
-			name="inputNum" value="3" onClick="addTF(this.value)">
+		<input class="link-button" type="button" name="inputNum" value="1" onClick="addTF(this.value)"> <input
+			type="button" class="link-button" name="inputNum" value="2" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" class="link-button" value="3" onClick="addTF(this.value)">
 	</div>
 	<div class="num-body">
-		<input type="button" name="inputNum" value="4" onClick="addTF(this.value)"> <input
-			type="button" name="inputNum" value="5" onClick="addTF(this.value)"> <input type="button"
-			name="inputNum" value="6" onClick="addTF(this.value)">
+		<input type="button" class="link-button" name="inputNum" value="4" onClick="addTF(this.value)"> <input
+			type="button" class="link-button" name="inputNum" value="5" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" class="link-button" value="6" onClick="addTF(this.value)">
 	</div>
 	<div class="num-body">
-		<input type="button" name="inputNum" value="7" onClick="addTF(this.value)"> <input
-			type="button" name="inputNum" value="8" onClick="addTF(this.value)"> <input type="button"
-			name="inputNum" value="9" onClick="addTF(this.value)">
+		<input type="button" class="link-button" name="inputNum" value="7" onClick="addTF(this.value)"> <input
+			type="button" class="link-button" name="inputNum" value="8" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" class="link-button" value="9" onClick="addTF(this.value)">
 	</div>
 	<div class="num-body">
-		<input type="button" name="inputNum" value="*" onClick="addTF(this.value)"> <input
-			type="button" name="inputNum" value="0" onClick="addTF(this.value)"> <input type="button"
-			name="inputNum" value="#" onClick="addTF(this.value)">
+		<input type="button" name="inputNum" class="link-button" value="*" onClick="addTF(this.value)"> <input
+			type="button" class="link-button" name="inputNum" value="0" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" class="link-button" value="#" onClick="addTF(this.value)">
 	</div>
 	<div>
-		<input type="button" name="inputNum" value="☎" onclick='smtel(document.getElementById("phonenumber").value)'>
+		<input type="button" name="inputNum" class="link-button" value="☎" onclick='smtel(document.getElementById("phonenumber").value)'>
 	</div>
 	</form>
 <h5><a href="main.jsp">>> メニュー画面へ</a></h5>
