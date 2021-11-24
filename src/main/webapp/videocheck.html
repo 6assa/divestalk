@@ -10,7 +10,7 @@
 <body>
 	<h2>電話</h2>
 	<form name="phonenumber">
-	<input id="phonenumber" type="tel" name="outputNum" placeholder="20" disabled>
+	<input class="phonenumber" id="phonenumber" type="tel" name="outputNum" placeholder="20" disabled>
 	<p>
 		<label for="model">モードを選択してください：</label> 
 		<select id="model" name="model">
