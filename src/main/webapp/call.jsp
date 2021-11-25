@@ -52,12 +52,17 @@ function smtel(telno){
 	if((navigator.userAgent.indexOf('iPhone') > 0 ) || navigator.userAgent.indexOf('Android') > 0 ){
 	document.write('<a id="kakeru" href="tel:'+telno+'">'+telno+'</a>');
 	document.getElementById('kakeru').click();
+	//if(model.selectedIndex.value=='callText.jsp'){
 		  window.location.href = 'callText.jsp';
+	//}else{
+		//window.location.href = 'callVideo.jsp';
+	//}
 
 
 
 	}else{
-	document.write("PC上からは発信できません");
+	document.write('PC上からは発信できません');
+	document.write('<h5><a href="main.jsp">>> メニュー画面へ</a></h5>');'
 	}
 	}
 </script>

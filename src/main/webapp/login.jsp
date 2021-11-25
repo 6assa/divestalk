@@ -10,6 +10,7 @@
 <body>
 	<div class="container">
 		<h1>DivesTalk</h1>
+		<img src="images/画像1.png" width="50px" height="50px">
 		<h2>ログイン</h2>
 		<div class="card">
 			<p class="error" id="errorMsg">${errorMsg}</p>
