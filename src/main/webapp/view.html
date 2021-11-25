@@ -1,34 +1,68 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DivesTalk ログイン画面</title>
-<link rel="stylesheet" href="css/login.css">
+<title>DivesTalk 文字入力画面</title>
+<link rel="stylesheet" href="css/callText.css">
 </head>
 <body>
-	<div class="container" style="text-align: center">
-		<h1>DivesTalk</h1>
-		<img src="images/画像1.png" width="200px" height="200px">
-		<h2>ログイン</h2>
-		<div class="card">
-			<p class="error" id="errorMsg">${errorMsg}</p>
-			<form action="LoginServlet" id="loginForm" method="post">
-				<input type="email" class="input" name="mailAddress"
-					id="mailAddress" placeholder="xxxxxx@xxx.xxx"><br> <input
-					type="password" class="input" name="password" id="password"
-					placeholder="パスワード"><br> <input type="submit"
-					class="input" value="ログイン" onclick="login();"> <label><br>
-				<input type="checkbox" id="save"><span>ログイン状態を保持する</span></label>
-			</form>
-		</div>
+<button id="kakunin">音声文字化確認</button>
+<div id="content"></div>
+<div class="container">
+   <div id="chat-area" class="chat-area"></div>
+   <div class="message-area">
+     <div class="message-area-text">
+       <input type="text" id="text" cols="40" wrap="hard">
+     </div>
+     <div class="message-area-button">
+       <input type="submit" class="disabled-button" onclick="onbuttonclick()" value="送信">
+     </div>
+   </div>
+ </div>
+<script>
+    const speech = new webkitSpeechRecognition();
+    speech.lang = 'ja-JP';
 
-		<a href="signup.jsp">>> 新規登録画面へ</a>
-	</div>
-	<!-- container -->
-	<script src="js/jquery-3.2.0.min.js"></script>
-	<script src="js/login.js"></script>
+    const btn = document.getElementById('kakunin');
+    const content = document.getElementById('content');
+    const sousin=document.getElementById('chat-area');
+    btn.addEventListener('click' , function() {
+    // 音声認識をスタート
+    speech.start();
+    });
 
+    //---------------追記---------------//
+    //音声自動文字起こし機能
+    speech.onresult = function(e) {
+         speech.stop();
+         if(e.results[0].isFinal){
+             var autotext =  e.results[0][0].transcript;
+             console.log(e);
+             console.log(autotext);
+             sousin.innerHTML +=  '<div class="balloon_l"><div align="left"><p class="says">'+ autotext +'</p></div></div>';
+             const uttr = new SpeechSynthesisUtterance(autotext);
+             // 発言を再生 (発言キューに発言を追加)
+             speechSynthesis.speak(uttr);
+         }
+     }
+
+     speech.onend = () => { 
+        speech.start();
+     };
+    //--------------------------------//
+  
+  //const speakBtn = document.getElementById('send');
+  function onbuttonclick() {
+    // 発言を作
+
+	   var text     = document.getElementById('text');
+    sousin.innerHTML +=  '<div class="balloon_r"><div class="says" align="right">'+ text.value +'</div><br></div>';
+    const uttr = new SpeechSynthesisUtterance(text.value);
+    // 発言を再生 (発言キューに発言を追加)
+    speechSynthesis.speak(uttr);
+  };
+</script>
 </body>
 </html>
