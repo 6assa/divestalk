@@ -7,8 +7,8 @@
 <title>DivesTalk 文字入力画面</title>
 <link rel="stylesheet" href="css/callText.css">
 </head>
-<body>
-<button id="kakunin">音声文字化確認</button>
+<body onload="onsei()">
+
 <div id="content"></div>
 <div class="container">
    <div id="chat-area" class="chat-area"></div>
@@ -28,10 +28,13 @@
     const btn = document.getElementById('kakunin');
     const content = document.getElementById('content');
     const sousin=document.getElementById('chat-area');
-    btn.addEventListener('click' , function() {
+    function onsei(){
+    	speech.start();
+    }
+    //btn.addEventListener('click' , function() {
     // 音声認識をスタート
-    speech.start();
-    });
+    //speech.start();<button id="kakunin">音声文字化確認</button>
+    //});
 
     //---------------追記---------------//
     //音声自動文字起こし機能
