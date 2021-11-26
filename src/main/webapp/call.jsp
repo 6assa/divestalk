@@ -38,7 +38,7 @@
 			name="inputNum" class="link-button" value="#" onClick="addTF(this.value)">
 	</div>
 	<div>
-		<input type="button" name="inputNum" class="link-button" value="☎" onclick='smtel(document.getElementById("phonenumber").value)'>
+		<input type="button" name="inputNum" class="link-button-call" value="☎" onclick='smtel(document.getElementById("phonenumber").value)'>
 	</div>
 	</form>
 <h5><a href="main.jsp">>> メニュー画面へ</a></h5>

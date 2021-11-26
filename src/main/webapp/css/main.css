@@ -23,6 +23,16 @@ body{
 	font-size: 100%;
 	
 }
+
+.link-button-call{
+	margin:10px;
+	width: 350px;
+	height:75px;
+	border-radius: 10px;
+	border:solid;
+	font-size: 100%;
+	
+}
 .phonenumber{
 	height:100px;
 	display: flex;

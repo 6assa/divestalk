@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("login.jsp").forward(request, response);
+		request.getRequestDispatcher("index.html").forward(request, response);
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
 		if (errormsg.length() > 0) {
 			// エラーメッセージがある場合
 			request.setAttribute("errorMsg", errormsg.toString());
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("index.html").forward(request, response);
 		}
 
 		// 成功時
