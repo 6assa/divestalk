@@ -1,66 +1,69 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DivesTalk 文字入力画面</title>
-<link rel="stylesheet" href="css/callText.css">
+<title>DivesTalk  電話画面</title>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<button id="kakunin">音声文字化確認</button>
-<div id="content"></div>
-<div class="container">
-   <div id="chat-area" class="chat-area"></div>
-   <div class="message-area">
-     <div class="message-area-text">
-       <input type="text" id="text" cols="40" wrap="hard">
-     </div>
-     <div class="message-area-button">
-       <input type="submit" class="disabled-button" onclick="onbuttonclick()" value="送信">
-     </div>
-   </div>
- </div>
+	<h2>電話</h2>
+	<form name="phonenumber">
+	<input class="phonenumber" id="phonenumber" type="tel" name="outputNum" placeholder="20" disabled>
+	<p>
+		<label for="model">モードを選択してください：</label> 
+		<select id="model" name="model">
+			<option selected value="callText.jsp" >文字音声</option>
+			<option value="callVideo.jsp" >ビデオ</option>
+		</select>
+	<div class="num-body">
+		<input class="link-button" type="button" name="inputNum" value="1" onClick="addTF(this.value)"> <input
+			type="button" class="link-button" name="inputNum" value="2" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" class="link-button" value="3" onClick="addTF(this.value)">
+	</div>
+	<div class="num-body">
+		<input type="button" class="link-button" name="inputNum" value="4" onClick="addTF(this.value)"> <input
+			type="button" class="link-button" name="inputNum" value="5" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" class="link-button" value="6" onClick="addTF(this.value)">
+	</div>
+	<div class="num-body">
+		<input type="button" class="link-button" name="inputNum" value="7" onClick="addTF(this.value)"> <input
+			type="button" class="link-button" name="inputNum" value="8" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" class="link-button" value="9" onClick="addTF(this.value)">
+	</div>
+	<div class="num-body">
+		<input type="button" name="inputNum" class="link-button" value="*" onClick="addTF(this.value)"> <input
+			type="button" class="link-button" name="inputNum" value="0" onClick="addTF(this.value)"> <input type="button"
+			name="inputNum" class="link-button" value="#" onClick="addTF(this.value)">
+	</div>
+	<div>
+		<input type="button" name="inputNum" class="link-button-call" value="☎" onclick='smtel(document.getElementById("phonenumber").value)'>
+	</div>
+	</form>
+<h5><a href="main.jsp">>> メニュー画面へ</a></h5>
 <script>
-    const speech = new webkitSpeechRecognition();
-    speech.lang = 'ja-JP';
+var number = document.getElementById("phonenumber");
+const hassin = number.value;
+function addTF(str){
+	document.phonenumber.outputNum.value += str; //番号入力後追加
+}
+function smtel(telno){
+	if((navigator.userAgent.indexOf('iPhone') > 0 ) || navigator.userAgent.indexOf('Android') > 0 ){
+	document.write('<a id="kakeru" href="tel:'+telno+'">'+telno+'</a>');
+	document.getElementById('kakeru').click();
+	//if(model.selectedIndex.value=='callText.jsp'){
+		  window.location.href = 'callText.jsp';
+	//}else{
+		//window.location.href = 'callVideo.jsp';
+	//}
 
-    const btn = document.getElementById('kakunin');
-    const content = document.getElementById('content');
-    const sousin=document.getElementById('chat-area');
-    btn.addEventListener('click' , function() {
-    // 音声認識をスタート
-    speech.start();
-    });
 
-    //---------------追記---------------//
-    //音声自動文字起こし機能
-    speech.onresult = function(e) {
-         speech.stop();
-         if(e.results[0].isFinal){
-             var autotext =  e.results[0][0].transcript;
-             console.log(e);
-             console.log(autotext);
-             sousin.innerHTML +=  '<div align="left">'+ autotext +'</div>';
-             const uttr = new SpeechSynthesisUtterance(autotext);
-             // 発言を再生 (発言キューに発言を追加)
-             speechSynthesis.speak(uttr);
-         }
-     }
 
-     speech.onend = () => { 
-        speech.start();
-     };
-    //--------------------------------//
-  
-  //const speakBtn = document.getElementById('send');
-  function onbuttonclick() {
-    // 発言を作
-
-	   var text     = document.getElementById('text');
-    sousin.innerHTML +=  '<div align="right">'+ text.value +'</div>';
-    const uttr = new SpeechSynthesisUtterance(text.value);
-    // 発言を再生 (発言キューに発言を追加)
-    speechSynthesis.speak(uttr);
-  };
+	}else{
+	document.write('PC上からは発信できません');
+	document.write('<h5><a href="main.jsp">>> メニュー画面へ</a></h5>');'
+	}
+	}
 </script>
 </body>
-</html>
