@@ -1,15 +1,35 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DivesTalk ログイン画面</title>
-<link rel="stylesheet" href="css/login.css">
+<title>DivesTalk メイン画面</title>
+<link rel="stylesheet" href="css/main.css">
 </head>
-<body onload="logingamen()">
-<script>
-function logingamen(){
-	window.location.href = 'login.jsp';
-}
-</script>
+<body>
+<div class="nowUser">
+<img src="images/usericon.png" width="50px" height="50px" alt="userIcon"/>
+<p>Main User</p>
+</div>
+<div class="contents-area">
+<h2>メニュー</h2>
+<div class="contents-body">
+<button class="link-button" onclick="location.href='#'">連絡先</button>
+<button class="link-button" onclick="location.href='#'">機能2</button>
+<button class="link-button" onclick="location.href='#'">アプリを閉じる</button>
+</div>
+
+<div class="contents-body">
+<button class="link-button" onclick="location.href='talk.jsp'">トーク</button>
+<button class="link-button" onclick="location.href='call.jsp'">電話</button>
+<button class="link-button" onclick="location.href='stack.jsp'">筆談代行</button>
+</div>
+
+<div class="contents-body">
+<button class="link-button" onclick="location.href='alerm.jsp'">アラーム</button>
+<button class="link-button" onclick="location.href='timer.jsp'">タイマー</button>
+<button class="link-button" onclick="location.href='#'">ユーザ設定</button>
+</div>
+
+
+</div>
 </body>
 </html>
