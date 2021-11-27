@@ -26,7 +26,6 @@
 
 		<a href="signup.jsp">>> 新規登録画面へ</a>
 	</div>
-	<!-- container -->
 	<script src="js/jquery-3.2.0.min.js"></script>
 	<script src="js/login.js"></script>
 
