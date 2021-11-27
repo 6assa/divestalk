@@ -44,10 +44,9 @@
              var autotext =  e.results[0][0].transcript;
              console.log(e);
              console.log(autotext);
-             sousin.innerHTML +=  '<div align="left"><p class="says">'+ autotext +'</p></div>';
+             sousin.innerHTML +=  '<div class="balloon_l"><div align="left"><p class="says">'+ autotext +'</p></div></div>';
              const uttr = new SpeechSynthesisUtterance(autotext);
              // 発言を再生 (発言キューに発言を追加)
-             speechSynthesis.speak(uttr);
          }
      }
 
@@ -61,7 +60,7 @@
     // 発言を作
 
 	   var text     = document.getElementById('text');
-    sousin.innerHTML +=  '<div class="says" align="right">'+ text.value +'</div>';
+    sousin.innerHTML +=  '<div class="balloon_r"><div class="says" align="right">'+ text.value +'</div></div>';
     const uttr = new SpeechSynthesisUtterance(text.value);
     // 発言を再生 (発言キューに発言を追加)
     speechSynthesis.speak(uttr);
