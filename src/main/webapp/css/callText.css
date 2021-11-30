@@ -9,7 +9,8 @@
 .chat-area {
 	height: 80vh;
 	background: #8DB4E5;
-	overflow: scroll
+	overflow: scroll;
+	font-size:100px;
 }
 .message-area {
 	height: 10vh;
