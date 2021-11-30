@@ -30,7 +30,7 @@
 .message-area-text input {
 	width: 100%;
 	height: 100%;
-	resize: none; /* これでユーザーのリサイズをできなくする */
+	/*resize: none;  これでユーザーのリサイズをできなくする */
 	border: 1px solid #ddd; /* 枠線をつけて領域を分かりやすく */
 	box-sizing: border-box; /* borderを付けてるので、border込の大きさにする */
 }
